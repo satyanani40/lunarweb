@@ -11,7 +11,6 @@
 	<!-- bower:css -->
 	<link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.css" />
 	<link rel="stylesheet" href="static/bower_components/angular-motion/dist/angular-motion.css" />
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
@@ -33,9 +32,9 @@
 			</a>
 		</div>
 		<div class="navbar-collapse collapse">
-			<div class="col-sm-5 col-md-5" ng-controller="InstantsearchCtrl">
+			<div class="col-sm-6 col-md-6" ng-controller="InstantsearchCtrl">
 				<form class="navbar-form" role="search" ng-if="isAuthenticated()">
-					<div class="input-group col-sm-12 input-block">
+					<div class="input-group col-md-9">
 						<input type="text" class="form-control" placeholder="Search" name="q" ng-model="search">
 						<div class="input-group-btn">
 							<button class="btn btn-default" type="submit" ng-click="searchSubmit()"><i class="glyphicon glyphicon-search"></i>
@@ -209,7 +208,7 @@
 	<script src="/static/app/scripts/controllers/about.js"></script>
     <script src="/static/app/scripts/controllers/weber_search.js"></script>
     <script src="/static/app/scripts/controllers/friends.js"></script>
-    <script src="/static/app/scripts/controllers/.js"></script>
+    <script src="/static/app/scripts/controllers/matchme.js"></script>
     <script src="/static/app/scripts/controllers/settings.js"></script>
 	<script src="/static/app/scripts/services/weberservice.js"></script>
 	<script src="/static/app/scripts/controllers/userprofile.js"></script>

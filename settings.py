@@ -4,8 +4,8 @@ import os
     # Running on local machine. Let's just use the local mongod instance.
 MONGO_HOST = 'localhost'
 MONGO_PORT = 27017
-MONGO_USERNAME = 'test1'
-MONGO_PASSWORD = 'test1'
+MONGO_USERNAME = 'test'
+MONGO_PASSWORD = 'test'
 MONGO_DBNAME = 'test'
 
 URL_PREFIX = 'api'
