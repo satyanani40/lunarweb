@@ -3,9 +3,7 @@
         <div class="panel panel-primary" style="margin-bottom:0px;cursor:default;border:none;">
             <div class="panel-heading" style="border:none;">
                 <h5 style="margin-top: 5px;margin-bottom: 5px;" class="text-center">
-                    <img style="width:28px;margin-top: -5px;border: 2px solid; margin-right: 5px;"
-                         class="pull-left img-circle" src="http://api.randomuser.me/portraits/thumb/women/70.jpg" alt="">
-                    your Previous Searches
+                    Your Previous Searches
                     <span class="badge badge-danger pull-right">30</span>
                 </h5>
             </div>
@@ -16,13 +14,13 @@
                I am going to movie today with.....
             </a>
             <a href="#" class="list-group-item">
-                <span class="pull-right label label-danger">1</span>
+                <span class="badge badge-primary">1</span>
                 Dapibus ac facilisis in
             </a>
             <a href="#" class="list-group-item">Morbi leo risus</a>
             <a href="#" class="list-group-item">Porta ac consectetur ac</a>
             <a href="#" class="list-group-item">Vestibulum at eros</a>
-            <a href="#" class="list-group-item"><span class="pull-right label label-danger">9</span>Morbi leo risus</a>
+            <a href="#" class="list-group-item"><span class="badge badge-primary">9</span>Morbi leo risus</a>
             <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
             <a href="" class="list-group-item">
                I am going to movie today with.....
@@ -30,7 +28,7 @@
             <a href="#" class="list-group-item">Morbi leo risus</a>
             <a href="#" class="list-group-item">Porta ac consectetur ac</a>
             <a href="#" class="list-group-item">
-                <span class="pull-right label label-danger">4</span>
+                <span class="badge badge-primary">4</span>
                 Dapibus ac facilisis in
             </a>
             <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
@@ -45,7 +43,16 @@
         </div>
     </div>
     <div class="col-md-7 colpadding" style="min-height:2000px">
-
+        <form role="form" class="post-to-timeline well colpadding clearfix" style="padding:5px 5px;">
+            <textarea ng-model="new_post"  class="form-control"
+                      style="height: 70px;margin-bottom: 10px;resize:none;"
+                      placeholder="Whats on your mind..."></textarea>
+            <div class="row">
+                <div class="col-sm-offset-4 col-sm-2 pull-right">
+                    <button ng-click="submit_post()"
+                            type="submit" class="btn btn-primary btn-block btn-sm">Post</button></div>
+            </div>
+        </form>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Total <label class="">300</label> people are matched with your search</h4>
@@ -54,7 +61,7 @@
         <div class="media panel panel-default">
             <div class="media-body panel-heading">
                 <a class="pull-left" style="padding: 5px;" href="">
-                    <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/men/68.jpg" alt="">
+                    <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/women/68.jpg" alt="">
                 </a>
                 <strong>Surya Muppalla</strong> is matched with you.
                 <br>
@@ -69,7 +76,7 @@
                 <a class="pull-left" style="padding: 5px;" href="">
                     <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/women/68.jpg" alt="">
                 </a>
-                <strong>Vegeshna Satyanarayana</strong> is matched with you.
+                <strong>Surya Muppalla</strong> is matched with you.
                 <br>
                 <small class="text-muted"><span class="glyphicon glyphicon-time"></span>
                     <span am-time-ago="post._created">just now</span></small>
@@ -80,7 +87,7 @@
         <div class="media panel panel-default">
             <div class="media-body panel-heading">
                 <a class="pull-left" style="padding: 5px;" href="">
-                    <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/men/60.jpg" alt="">
+                    <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/women/68.jpg" alt="">
                 </a>
                 <strong>Surya Muppalla</strong> is matched with you.
                 <br>
@@ -93,7 +100,7 @@
         <div class="media panel panel-default">
             <div class="media-body panel-heading">
                 <a class="pull-left" style="padding: 5px;" href="">
-                    <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/women/8.jpg" alt="">
+                    <img style="width:28px" class="media-object img-circle" src="http://api.randomuser.me/portraits/thumb/women/68.jpg" alt="">
                 </a>
                 <strong>Surya Muppalla</strong> is matched with you.
                 <br>

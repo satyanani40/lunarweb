@@ -1,4 +1,4 @@
-<div class="container" style="width:400px;padding-top:150px">
+<div class="container" style="width:400px">
   <div class="row">
     <div class="center-form panel">
       <form method="post" ng-submit="signup()" name="signupForm">
@@ -7,7 +7,7 @@
 
           <div class="form-group"
                ng-class="{ 'has-success' : signupForm.email.$valid && signupForm.email.$dirty, 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
-            <input class="form-control input-md" type="email" id="email"
+            <input class="form-control input-lg" type="email" id="email"
                    name="email" ng-model="email" placeholder="Email" required
                    autofocus>
 
@@ -20,7 +20,7 @@
 
           <div class="form-group"
                ng-class="{ 'has-success' : signupForm.password.$valid && signupForm.password.$dirty, 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
-            <input class="form-control input-md" type="password" name="password"
+            <input class="form-control input-lg" type="password" name="password"
                    ng-model="password" placeholder="Password" required>
 
             <div class="help-block text-danger"
@@ -32,7 +32,7 @@
 
           <div class="form-group"
                ng-class="{ 'has-success' : signupForm.confirmPassword.$valid && signupForm.confirmPassword.$dirty, 'has-error' : signupForm.confirmPassword.$invalid && signupForm.confirmPassword.$dirty }">
-            <input class="form-control input-md" type="password"
+            <input class="form-control input-lg" type="password"
                    name="confirmPassword" ng-model="confirmPassword"
                    repeat-password="password" placeholder="Confirm Password"
                    required>
@@ -46,7 +46,7 @@
           </div>
 
           <button ng-click = "registerUser()" type="submit" ng-disabled="signupForm.$invalid"
-                  class="btn btn-md btn-block btn-primary">Create Account
+                  class="btn btn-lg btn-block btn-primary">Create Account
           </button>
         </div>
       </form>

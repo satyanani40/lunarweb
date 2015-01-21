@@ -1,61 +1,17 @@
 <div class="container">
-    <div class="col-md-3" wb-affix="150">
-		<div class="thumbnail">
-            <div class="itemsContainer">
-                <div class="image">
-                    <a href="">
-                        <img class="img-rounded" style="width:;" src="{{user.picture.large}}" />
-                    </a>
-                </div>
-                <div class="play">
-                   <span class="btn btn-file btn-block" style="background-color: rgba(0, 0, 0, 0.63) !important;
-                   border-color: rgba(0, 0, 0, 0.63) !important;">
-                       <i class="glyphicon glyphicon-camera" style="font-size:35px;color:#fff;"></i>
-                       <input type="file">
-                   </span>
-                </div>
-            </div>
-			<div class="caption text-center">
-				<h3 style="text-transform: capitalize;">{{user.name.first}} {{user.name.last}}</h3>
-				@{{user.username}}
-			</div>
-		</div>
-		<div class="list-group">
-			<a href="#" ng-repeat="interest in user.interests" class="list-group-item">{{interest}}</a>
-			<a href="#" class="list-group-item"><span class="badge badge-primary">38</span>Morbi leo risus</a>
-		</div>
-		<div class="panel panel-default">
-			<div class="clearfix panel-heading">Friends({{user.friends.length}})</div>
-
-			<a ng-repeat="friend in friends" href="#/profile/{{friend._id}}">
-				<img data-placement="top-right" data-content="{{friend.location.city}}, {{friend.location.state}}" title="{{friend.name.first}} {{friend.name.last}}" data-trigger="hover" bs-popover src="{{friend.picture.thumbnail}}">
-			</a>
-		</div>
-	</div>
-    <div class="col-md-7 " style="min-height:auto">
+    <div class="col-sm-offset-2 col-md-7 colpadding" style="min-height:auto">
         <div class="row">
            <div class="panel panel-default">
                <div class="panel-heading">
-                   <div class="row">
-                       <div class="col-sm-6">
-                           <h4>
-                               <i style="opacity:0.70" class="fa fa-users"></i>&nbsp;
-                               Friends&nbsp;
-                                   <label class="">
-                                       <a href="" style="">
-                                           ({{user.friends.length}})
-                                       </a>
-                                   </label>
-                               </span>
-                           </h4>
-                       </div>
-                       <div class="col-sm-5 pull-right">
-                           <div class="right-inner-addon">
-                                <i class="fa fa-search"></i>
-                                <input type="search" class="form-control input-sm" placeholder="Search Friends" />
-                           </div>
-                       </div>
-                   </div>
+                   <h5>
+                       Surya Muppalla Friends&nbsp;
+                           <label class="">
+                               <a href="" style="">
+                                   ({{user.friends.length}})
+                               </a>
+                           </label>
+                       </span>
+                   </h5>
                </div>
                <div class="panel-body">
                    <div ng-repeat="friend in friends" class="row pad-top">
@@ -67,40 +23,17 @@
                             </div>
                        </div>
                        <div class="col-sm-4 colpadding">
-                           <h4>
-                               <a href="#/profile/{{friend._id}}">
-                                   <b>{{friend.name.first}} {{friend.name.last}}</b>
-                               </a>
-                           </h4>
-                           <h5 style="opacity:0.70">{{ friend.friends.length }} mutual friends</h5>
+                           <a href="#/profile/{{friend._id}}">
+                               <h4>{{ friend.username }}</h4>
+                           </a>
                        </div>
-                       <div class="col-sm-3 pull-right colpadding">
-                           <div class="" style="margin-top:7px;">
+                       <div class="col-sm-3 colpadding">
+                           <div class="" style="margin-top:40px;">
                                <div class="row">
                                    <div class="col-sm-12">
-                                       <div class="dropdown">
-                                          <button id="dLabel" class="btn btn-default btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                              <i class="fa fa-check" style="opacity:0.80"></i>&nbsp;
-                                              <b>Friends</b>
-                                            <span class="caret"></span>
-                                          </button>
-                                          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                            <li>
-                                                <a href="">Get Notifications</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Suggest Friends</a>
-                                            </li>
-                                            <li>
-                                                <a href="">Unfriend</a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    Block User
-                                                </a>
-                                            </li>
-                                          </ul>
-                                       </div>
+                                       <a href="" class="btn btn-default btn-sm">
+                                           Cancel Friend
+                                       </a>
                                    </div>
                                </div>
                            </div>

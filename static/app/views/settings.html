@@ -1,46 +1,11 @@
 <div class="container">
-    <div class="col-md-3 colpadding" wb-affix="150">
-		<div class="thumbnail">
-            <div class="itemsContainer">
-                <div class="image">
-                    <a href="">
-                        <img class="img-rounded" style="width:;" src="{{user.picture.large}}" />
-                    </a>
-                </div>
-                <div class="play">
-                   <span class="btn btn-file btn-block" style="background-color: rgba(0, 0, 0, 0.63) !important;
-                   border-color: rgba(0, 0, 0, 0.63) !important;">
-                       <i class="glyphicon glyphicon-camera" style="font-size:35px;color:#fff;"></i>
-                       <input type="file">
-                   </span>
-                </div>
-            </div>
-			<div class="caption text-center">
-				<h3 style="text-transform: capitalize;">{{user.name.first}} {{user.name.last}}</h3>
-				@{{user.username}}
-			</div>
-		</div>
-		<div class="list-group">
-			<a href="#" ng-repeat="interest in user.interests" class="list-group-item">{{interest}}</a>
-			<a href="#" class="list-group-item"><span class="badge badge-primary">38</span>Morbi leo risus</a>
-		</div>
-		<div class="panel panel-default">
-			<div class="clearfix panel-heading">Friends({{user.friends.length}})</div>
-
-			<a ng-repeat="friend in friends" href="#/profile/{{friend._id}}">
-				<img data-placement="top-right" data-content="{{friend.location.city}}, {{friend.location.state}}" title="{{friend.name.first}} {{friend.name.last}}" data-trigger="hover" bs-popover src="{{friend.picture.thumbnail}}">
-			</a>
-		</div>
-	</div>
-    <div class="col-md-7 colpadding" style="min-height:auto">
+    <div class="col-sm-offset-3 col-md-6 colpadding" style="min-height:auto">
         <div class="row">
            <div class="col-sm-12">
                <div class="panel panel-default">
                    <div class="panel-heading">
-                       <h4>
-                           <i class="glyphicon glyphicon-cog"></i>
-                           Settings
-                       </h4>
+                       <i class="glyphicon glyphicon-cog"></i>&nbsp;
+                       Settings
                    </div>
                    <div class="panel-body" style="padding:0px">
                        <div class="list-group" style="margin-bottom:0px;">

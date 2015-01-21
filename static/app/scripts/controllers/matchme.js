@@ -10,6 +10,7 @@
 angular.module('weberApp')
 	.controller('MatchMeCtrl', function($scope, $auth, Restangular, InfinitePosts, $alert, $http, CurrentUser, UserService) {
 		$scope.UserService = UserService;
+        alert("hai");
 		$http.get('/api/me', {
 			headers: {
 				'Content-Type': 'application/json'
@@ -23,6 +24,10 @@ angular.module('weberApp')
 						$scope.friends = friends;
 					});
 				}
+				$scope.submit_post = function() {
+					$scope.infinitePosts.addPost($scope.new_post);
+					$scope.new_post = '';
+				};
 			});
 		});
 	});
