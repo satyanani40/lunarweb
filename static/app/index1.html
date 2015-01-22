@@ -9,14 +9,12 @@
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<!-- build:css(.) styles/vendor.css -->
 	<!-- bower:css -->
-
 	<link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.css" />
 	<link rel="stylesheet" href="static/bower_components/angular-motion/dist/angular-motion.css" />
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
-	<link rel="stylesheet" href="/static/app/styles/bootstrap.css" />
+	<!--<link rel="stylesheet" href="/static/app/styles/bootstrap.css" />-->
 	<link rel="stylesheet" href="/static/app/styles/main.css">
 	<!-- endbuild -->
 </head>
@@ -26,44 +24,51 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 	<div ng-show="overlay" id="screen-overlay"></div>
+
 	<div ng-controller="NavbarCtrl" class="navbar navbar-inverse navbar-fixed-top" role="navigation" bs-navbar>
-        <div class="container" style="width:90%;">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/#/" ng-if="isAuthenticated()">
-                    <span class="glyphicon glyphicon-film"></span>
-                    <strong>Weber</strong>
-                </a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <div class="col-sm-7 col-md-7" ng-controller="InstantsearchCtrl">
-                    <form class="navbar-form" role="search" ng-if="isAuthenticated()">
-                        <div class="input-group col-sm-12 input-block">
-                            <input type="text" class="form-control" placeholder="Search" name="q" ng-model="search">
-                            <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit" ng-click="searchSubmit()"><i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <ul class="nav navbar-nav pull-right" ng-if="!isAuthenticated()">
-                    <li data-match-route="/login"><a href="#/login">Login</a>
-                    </li>
-                    <li data-match-route="/signup"><a href="#/signup">Sign up</a>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right" ng-if="isAuthenticated()">
-                    <li class="active"><a href="#/">Home</a></li>
-                    <li><a href="#/matchme">Match Me</a></li>
-                    <li><a href="#/friends">Friends</a></li>
-                    <li>
-                        <a href="" bs-dropdown="dropdown" style="padding-top: 11px; padding-bottom: 11px;">
-                            <img style="width:28px; border: 2px solid; margin-right: 5px;" class="img-circle" src="{{currentUser.user.picture.thumbnail}}" alt="">{{currentUser.user.username}} <span class="caret"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+		<div class="navbar-header">
+			<a class="navbar-brand" href="/#/">
+				<span class="glyphicon glyphicon-film"></span>
+				<strong>Weber</strong>
+			</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<div class="col-sm-6 col-md-6" ng-controller="InstantsearchCtrl">
+				<form class="navbar-form" role="search">
+					<div class="input-group col-md-9">
+						<input type="text" class="form-control" placeholder="Search" name="q" ng-model="search" ng-keyup="searching()" >
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit" ng-click="searchSubmit()"><i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+						<ul>
+							<li ng-repeat="x in results">
+						  		{{ x }}
+							</li>
+					  	</ul>
+
+					</div>
+				</form>
+			</div>
+			<ul class="nav navbar-nav pull-right" ng-if="!isAuthenticated()">
+				<li data-match-route="/login"><a href="#/login">Login</a>
+				</li>
+				<li data-match-route="/signup"><a href="#/signup">Sign up</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav pull-right" ng-if="isAuthenticated()">
+                <li class="active"><a href="#/">Home</a></li>
+                <li><a href="#/matchme">Match Me</a></li>
+                <li><a href="#/friends">Friends</a></li>
+				<li class="navbar-text" ng-bind="userInfo.userName"></li>
+				<li>
+					<a href="" bs-dropdown="dropdown" style="padding-top: 11px; padding-bottom: 11px;">
+						<img style="width:28px; border: 2px solid; margin-right: 5px;" class="img-circle" src="{{currentUser.user.picture.thumbnail}}" alt="">{{currentUser.user.username}} <span class="caret"></span>
+					</a>
+				</li>
+				</li>
+			</ul>
+		</div>
 	</div>
 
 	<!-- Add your site or application content here -->
@@ -75,9 +80,9 @@
 	</div>
 	<div class="container hidden">
 		<div class="row">
-			<div class="col-md-3" style="position: fixed;bottom: 0px;right:0px">
-				<div class="panel panel-primary" style="margin-bottom:0px;">
-					<div class="panel-heading" id="accordion" style="padding:8px 15px;font-size:12px !important;">
+			<div class="col-md-3" style="position: fixed;bottom: 0px;right:5px">
+				<div class="panel panel-primary">
+					<div class="panel-heading" id="accordion">
 						<span class="glyphicon glyphicon-comment"></span> Chat
 						<div class="btn-group pull-right">
 							<a type="button" class="btn btn-default btn-xs" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
@@ -212,8 +217,8 @@
 	<script src="/static/app/scripts/controllers/about.js"></script>
     <script src="/static/app/scripts/controllers/weber_search.js"></script>
     <script src="/static/app/scripts/controllers/friends.js"></script>
-    <script src="/static/app/scripts/controllers/.js"></script>
     <script src="/static/app/scripts/controllers/settings.js"></script>
+	<script src="/static/app/scripts/controllers/weber_search.js"></script>
 	<script src="/static/app/scripts/services/weberservice.js"></script>
 	<script src="/static/app/scripts/controllers/userprofile.js"></script>
 	<script src="/static/app/scripts/controllers/instantsearch.js"></script>
@@ -222,8 +227,6 @@
 	<script src="/static/app/scripts/controllers/signup.js"></script>
 	<script src="/static/app/scripts/controllers/navbar.js"></script>
 	<script src="/static/app/scripts/filters/fromnow.js"></script>
-	<!--<script type="text/javascript" src="/static/app/scripts/autocomplete.js"></script>
-	<script type="text/javascript" src="/static/app/scripts/autocomplete_ap.js"></script>-->
 	<!-- endbuild -->
 </body>
 
